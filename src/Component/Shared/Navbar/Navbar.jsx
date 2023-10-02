@@ -40,7 +40,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="my-btn hover:bg-transparent hover:text-[#2396DC] transition-all duration-200 ease-in-out">Button</a>
+    <button className="btn bg-blue-400 text-white">Button</button>
   </div>
 </div>
 

@@ -1,9 +1,13 @@
+import { Container } from 'postcss';
 import React from 'react';
+import Slider from './Slider/Slider';
+
+
 
 const Home = () => {
     return (
         <div>
-           <h1>xx</h1> 
+<Slider></Slider>
         </div>
     );
 };

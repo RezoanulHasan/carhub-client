@@ -22,7 +22,7 @@ const App = () => {
 
 
       <div className="card-actions justify-center">
- <Link to="top" smooth={true} duration={500}><button className="btn bg-black text-white  hover:btn "><FaArrowUp className=''></FaArrowUp></button></Link> </div>            
+ <Link to="top" smooth={true} duration={500}><button className= "btn bg-blue-400 text-white"><FaArrowUp className=''></FaArrowUp></button></Link> </div>            
    
 
 
