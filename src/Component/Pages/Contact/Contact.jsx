@@ -12,14 +12,7 @@ import ContactForm from "./ContactForm/ContactForm";
 const Contact = () => {
   return (
     <div className="container mx-auto px-3 sm:px-5">
-      <div
-        style={{
-          backgroundImage: `url(https://i.ibb.co/279ZRRB/about-banner.jpg)`,
-        }}
-        className="h-[50vh] flex justify-center items-center bg-[#000000] bg-opacity-[0.5] bg-blend-multiply bg-cover bg-center"
-      >
-        <h2 className="font-extrabold text-[32px] text-[#FACC15]">Contact</h2>
-      </div>
+      
       <div className="py-16 sm:py-24">
         <div className="text-left border-l-4 border-[#1d4ed8] pl-3">
           <h2 className="font-bold text-2xl sm:text-4xl">Reach Out to Us</h2>
@@ -40,18 +33,18 @@ const Contact = () => {
             </p>
             <div className="text-lg my-5 font-medium">
               <p className="flex items-center gap-2 mb-2">
-                <FaLocationArrow className="text-[#1d4ed8]" /> 29 Street, New
-                Delhi, India # 34 Road, House #10
+                <FaLocationArrow className="text-[#1d4ed8]" /> 21 Street, Bogra
+                , Bangladesh # 12 Road, House #1
               </p>
               <p className="flex items-center gap-2 cursor-pointer mb-2">
-                <FaMobileAlt className="text-[#1d4ed8]" /> +123-5889-000
+                <FaMobileAlt className="text-[#1d4ed8]" /> +8801734639066
               </p>
               <p className="flex items-center gap-2 cursor-pointer mb-2">
-                <FaPhoneAlt className="text-[#1d4ed8]" /> +987-5889-000
+                <FaPhoneAlt className="text-[#1d4ed8]" /> +880170000000
               </p>
               <p className="flex items-center gap-2 cursor-pointer mb-2">
                 <FaTelegramPlane className="text-[#1d4ed8]" />
-                flavor@fusion.com
+              Carhub@gmail.com
               </p>
             </div>
           </div>
@@ -64,7 +57,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="contact-right mb-5">
+        <div className="contact-right mt-10 mb-5 mx-10">
           <Leaflet />
         </div>
       </div>

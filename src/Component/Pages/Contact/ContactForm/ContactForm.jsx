@@ -1,34 +1,45 @@
 import React, { useRef } from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
-import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const ContactForm = () => {
-  const form = useRef();
+  const formRef = useRef();
 
-  const sendEmail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_8lznrlj",
-        "template_8spfqz8",
-        form.current,
-        "W5Pw7Q1ZLOHg6b6H5"
-      )
-      .then(
-        (result) => {
-          toast.success("Message send successfully");
-          e.target.reset();
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error(error.text);
-        }
-      );
-  };
+    const contact = {
+      user_name: formRef.current.querySelector('[name="user_name"]').value,
+      user_email: formRef.current.querySelector('[name="user_email"]').value,
+      subject: formRef.current.querySelector('[name="subject"]').value,
+      message: formRef.current.querySelector('[name="message"]').value,
+    };
+
+    fetch("https://aircnc-server-k3xjzddn8-rezoanulhasan.vercel.app/contacts", {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(contact)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      if (data.insertedId) {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Message Sent Successfully',
+          icon: 'success',
+          confirmButtonText: 'CLOSE'
+        });
+        formRef.current.reset();
+      }
+    });
+  }
+
   return (
     <>
-      <form ref={form} onSubmit={sendEmail}>
+      <form ref={formRef} onSubmit={handleSubmit}>
         <div className="name-email grid grid-cols-2 gap-5">
           <div className="mb-4">
             <input
@@ -69,7 +80,7 @@ const ContactForm = () => {
         <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="my-btn w-fit flex gap-2 items-center hover:bg-transparent hover:text-[#FACC15] transition-colors duration-200 ease-in-out"
+            className="btn bg-blue-500 text-white"
           >
             SEND MESSAGE <FaArrowCircleRight />
           </button>
