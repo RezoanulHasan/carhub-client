@@ -1,41 +1,25 @@
-// CarDetails.jsx
 
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import useTitle from '../../../Hooks/useTitle';
+import React from 'react';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 function CarDetails() {
   const { id } = useParams();
-  const [car, setCar] = useState(null);
-  useTitle('Car Details'),
 
-  useEffect(() => { 
+  // Assuming the data is fetched and is an array of cars with unique IDs
+  const data = useLoaderData();
 
-    window.scrollTo(0, 0);
-
-}, []); 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`http://localhost:5000/cars/${id}`);
-        const data = await response.json();
-        setCar(data);
-      } catch (error) {
-        console.error('Error fetching car data:', error);
-      }
-    };
-
-    fetchData();
-  }, [id]);
-
-  if (!car) return <div>Loading...</div>;
+  // Find the selected car based on id
+  const car = data.find(car => car.id === parseInt(id)) || {};
 
   return (
-    <div className='mt-52'>
-      <h2 className="text-2xl font-bold mb-4">{car.model}</h2>
-      {/* Render other car details */}
+    <div className='mt-32'>
+      <h2>{car.model}</h2>
+      <p>Year: {car.year}</p>
+      {/* Add more details as needed */}
     </div>
   );
 }
 
 export default CarDetails;
+
+

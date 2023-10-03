@@ -43,8 +43,8 @@ const Contact = () => {
               Our Address
             </h2>
             <p className="text-lg my-3">
-              Discover delicious recipes from around the world, right in your
-              own kitchen. Explore our diverse collection today.
+              Discover various luxury car around the world, 
+              enjoy world class  premium service.
             </p>
             <div className="text-lg my-5 font-medium">
               <p className="flex items-center gap-2 mb-2">

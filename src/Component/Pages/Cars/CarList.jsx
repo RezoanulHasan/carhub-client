@@ -4,6 +4,7 @@ import Container from '../../Shared/Contanier/Container';
 import { useSearchParams } from 'react-router-dom';
 import { FaSearch ,FaUsers,FaGasPump ,FaTachometerAlt, FaCar} from 'react-icons/fa';
 import useTitle from '../../../Hooks/useTitle';
+import TotalCars from './TotalCars';
 
 
 
@@ -48,13 +49,13 @@ function CarList() {
   };
 
   const filteredCars = cars.filter((car) => car.model.toLowerCase().includes(model.toLowerCase()));
+ 
+
 
   return (
     <><Container>
     <div className='mt-32'>
-    
-
-
+   
     <div className=' lg:mx-20 mx-0 overflow-x-auto mt-10 border-[1px] w-full md:w-auto py-1 rounded-full shadow-sm hover:shadow-md transition cursor-pointer  bg-white'>
     <div className="relative flex justify-center items-center mb-4">
   <input
@@ -157,10 +158,15 @@ $ {car.rent}/month
 
 
 
+<div className='flex text-3xl  justify-center  font-bold text-center text-blue-400'>
 
-
+    <h1>{ filteredCars.length} </h1> - cars  from -<TotalCars></TotalCars>
+    </div>
 
 <div className=' lg:mx-20 mx-0 overflow-x-auto mt-10 border-[1px] w-full md:w-auto py-1 rounded-full shadow-sm hover:shadow-md transition cursor-pointer  bg-white'>
+
+
+
 
       <div className="flex justify-center mt-4">
         <nav className="inline-flex">

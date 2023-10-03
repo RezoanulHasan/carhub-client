@@ -14,17 +14,13 @@ const App = () => {
     <div id="top">
       <Navbar />
     
-
-      <div className='py-20 min-h-[calc(100vh-68px)]'>
+ <div className='py-20 min-h-[calc(100vh-68px)]'>
         <Outlet />
       </div>
-
-
 
       <div className="card-actions justify-center">
  <Link to="top" smooth={true} duration={500}><button className= "btn bg-blue-400 text-white"><FaArrowUp className=''></FaArrowUp></button></Link> </div>            
    
-
  <Footer></Footer>
     </div>
   );
