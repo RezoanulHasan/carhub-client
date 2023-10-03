@@ -42,18 +42,22 @@ function CarList() {
   return (
     <><Container>
     <div className='mt-32'>
+    
+
+
+    <div className=' lg:mx-20 mx-0 overflow-x-auto mt-10 border-[1px] w-full md:w-auto py-1 rounded-full shadow-sm hover:shadow-md transition cursor-pointer  bg-white'>
     <div className="relative flex justify-center items-center mb-4">
   <input
     id='model'
     type='text'
     placeholder='Search by                    Car name'
-    className='pl-4 pr-12 py-4  w-96 border border-blue-500 rounded-full text-center mx-auto'
+    className='pl-4 pr-12 py-2  w-96 border border-blue-500 rounded-full text-center mx-auto'
     value={model}
     onChange={(e) => setModel(e.target.value)}
   />
   <FaSearch className="absolute flex justify-end items-end top-1/2 transform -translate-y-1/2 text-blue-700" />
 </div>
-
+</div>
 {filteredCars.length > 0 ? (
 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-32 gap-4">
   {filteredCars.map((car) => (
@@ -140,6 +144,14 @@ $ {car.rent}/month
       </div>
     )}
 
+
+
+
+
+
+
+<div className=' lg:mx-20 mx-0 overflow-x-auto mt-10 border-[1px] w-full md:w-auto py-1 rounded-full shadow-sm hover:shadow-md transition cursor-pointer  bg-white'>
+
       <div className="flex justify-center mt-4">
         <nav className="inline-flex">
           <button
@@ -175,8 +187,11 @@ $ {car.rent}/month
             Next
           </button>
         </nav>
-      </div>
-    </div> </Container> </>
+      </div></div>
+    </div> 
+    
+    
+    </Container> </>
   );
 }
 
