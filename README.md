@@ -8,18 +8,18 @@
 - responsive for all device 
 ## Home
 - Navbar with logo, name, and essential links ( All cars and Contact) .
-- image slider with text
-- review rection
+- Image slider with text
+- Review rection
 
 ## All cars 
-- search functionality by car name
-- show car data with pagination
-- view car details option
+- Search functionality by car name
+- Show car data with pagination
+- View car details option
 
 
-## Contat
-  - poprer information with map
-  - direct massege system 
+## Contact
+  - Poprer information with map
+  - Direct massege system 
   
 
 
