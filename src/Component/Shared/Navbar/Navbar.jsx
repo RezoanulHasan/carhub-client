@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll} from "framer-motion";
 import "./scroll.css"
+import { FaHome, FaCar} from 'react-icons/fa';
+import {AiFillMessage } from 'react-icons/ai';
 const Navbar = () => {
 
   const { scrollYProgress } = useScroll();
@@ -36,11 +38,23 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-3">
       
-    <li className='hover:bg-blue-400 text-2xl  text-blue-400 hover:text-white font-bold  rounded-xl '> <Link to="/">Home </Link>
-    </li>
-    <li className='hover:bg-blue-400 text-2xl  text-blue-400 hover:text-white font-bold  rounded-xl'>  <Link to="/cars">All Cars </Link></li>
-     
-      <li><a>Item 3</a></li>
+    <li className='hover:bg-blue-400 text-xl  text-blue-400 hover:text-white rounded-xl'>
+  <Link to="/">
+    <FaHome className="inline-block mr-1" /> Home
+  </Link>
+</li>
+
+<li className='hover:bg-blue-400 text-xl  text-blue-400 hover:text-white rounded-xl'>
+  <Link to="/cars">
+    <FaCar className="inline-block mr-1" /> All Cars
+  </Link>
+</li>
+<li className='hover:bg-blue-400 text-xl  text-blue-400 hover:text-white rounded-xl'>
+  <Link to="/contact">
+    <AiFillMessage className="inline-block  " /> Contact
+  </Link>
+</li>
+    
     </ul>
   </div>
   <div className="navbar-end">

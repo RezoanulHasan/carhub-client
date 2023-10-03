@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Fade } from "react-awesome-reveal";
 import {
   FaArrowCircleRight,
   FaLocationArrow,
@@ -8,11 +9,21 @@ import {
 } from "react-icons/fa";
 import Leaflet from "./Leaflet/Leaflet";
 import ContactForm from "./ContactForm/ContactForm";
+import useTitle from "../../../Hooks/useTitle";
 
 const Contact = () => {
+
+  useTitle('Contact'),
+
+  useEffect(() => { 
+
+    window.scrollTo(0, 0);
+
+}, []); 
+
   return (
     <div className="container mx-auto px-3  sm:px-5">
-      
+      <Fade direction="down" >
       <div className="py-16 sm:py-24">
         <div className="text-left border-l-4 border-[#1d4ed8] pl-3">
           <h2 className="font-bold text-2xl sm:text-4xl">Reach Out to Us</h2>
@@ -21,7 +32,11 @@ const Contact = () => {
           </p>
         </div>
       </div>
+      </Fade>
+
+
       <div className="contact-body grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-5 pb-16 sm:pb-24">
+      <Fade direction="left" >
         <div className="contact-left">
           <div className="mb-12">
             <h2 className="text-3xl font-medium mb-5 pb-3 border-b-2 border-[#1d4ed8]">
@@ -57,9 +72,11 @@ const Contact = () => {
             </div>
           </div>
         </div>
+       </Fade >
+        <Fade direction="right" >
         <div className="contact-right mt-10 mb-5 mx-10">
-          <Leaflet />
-        </div>
+          <Leaflet />   
+        </div>  </Fade >
       </div>
     </div>
   );

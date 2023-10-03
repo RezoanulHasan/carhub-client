@@ -2,11 +2,18 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import useTitle from '../../../Hooks/useTitle';
 
 function CarDetails() {
   const { id } = useParams();
   const [car, setCar] = useState(null);
+  useTitle('Car Details'),
 
+  useEffect(() => { 
+
+    window.scrollTo(0, 0);
+
+}, []); 
   useEffect(() => {
     const fetchData = async () => {
       try {

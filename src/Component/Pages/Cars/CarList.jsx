@@ -3,10 +3,20 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import Container from '../../Shared/Contanier/Container';
 import { useSearchParams } from 'react-router-dom';
 import { FaSearch ,FaUsers,FaGasPump ,FaTachometerAlt, FaCar} from 'react-icons/fa';
+import useTitle from '../../../Hooks/useTitle';
 
 
 
 function CarList() {
+
+  useTitle('Car Info'),
+
+  useEffect(() => { 
+
+    window.scrollTo(0, 0);
+
+}, []); 
+
   const [cars, setCars] = useState([]);
   const [query, setQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -61,14 +71,14 @@ function CarList() {
 {filteredCars.length > 0 ? (
 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-32 gap-4">
   {filteredCars.map((car) => (
-    <li key={car.id} className="mb-5  rounded">
+    <li key={car?.id} className="mb-5  rounded">
   
       <div className="card w-full  h-full bg-blue-100   hover:bg-black hover:text-white  shadow-xl mt-4">
       <figure className=" relative overflow-hidden">
   <img
     className="w-full h-72 transform transition-transform duration-300 hover:scale-150"
-    src={car.image} 
-    alt={car.model} 
+    src={car?.image} 
+    alt={car?.model} 
   />
 </figure>
         <div className="card-body">
@@ -76,9 +86,9 @@ function CarList() {
 
 
         <h2 className="card-title flex justify-between items-center">
-  {car.model}
+  {car?.model}
   <div className="text-sm border-dashed border-2 border-indigo-600 rounded-lg p-2">
-    {car.year}
+    {car?.year}
   </div>
 </h2>
 
@@ -86,13 +96,13 @@ function CarList() {
 <h2 className="card-title flex justify-around items-center">
   <div className='-mx-10 card-title text-xl'>
     <FaUsers className="text-blue-500 ml-1" />
-    <h1>{car.seating_capacity}</h1>
+    <h1>{car?.seating_capacity}</h1>
   </div>
   <div className="p-2 card-title text-lg ">
 
   <FaTachometerAlt className="ml-1 text-blue-500  " />
  
-  {car.fuel_efficiency_km_per_liter.combined_km_per_liter}
+  {car?.fuel_efficiency_km_per_liter.combined_km_per_liter}
    
   </div>
 </h2>
@@ -101,12 +111,12 @@ function CarList() {
 <h2 className="card-title flex justify-around items-center">
   <div className='card-title text-xl'>
     < FaGasPump className="text-blue-500 ml-1" />
-    <h1>{car.fuel_type}</h1>
+    <h1>{car?.fuel_type}</h1>
   </div>
   <div className="p-2 card-title text-lg ">
 
   <FaCar className="ml-1 text-blue-500  " />
-    {car.transmission}
+    {car?.transmission}
 
   </div>
 </h2>
@@ -170,8 +180,8 @@ $ {car.rent}/month
                 key={pageNumber}
                 onClick={() => handlePagination(pageNumber)}
                 className={`${
-                  currentPage === pageNumber ? 'bg-blue-500' : 'bg-gray-200 hover:bg-blue-700'
-                } text-white font-bold py-2 px-4`}
+                  currentPage === pageNumber ? 'bg-blue-500' : 'bg-gray-200 hover:bg-blue-700 hover:text-white'
+                } text-black font-bold py-2 px-4`}
               >
                 {pageNumber}
               </button>

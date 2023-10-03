@@ -13,6 +13,7 @@ import Error from './Component/Shared/Error/Error.jsx';
 import Home from './Component/Pages/HOME/Home';
 import CarList from './Component/Pages/Cars/CarList.jsx';
 import CarDetails from './Component/Pages/Cars/CarDetails.jsx';
+import Contact from './Component/Pages/Contact/Contact.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       },{
         path: "/car/:id",
         element:<CarDetails></CarDetails>,
+      },
+      {
+        path: "contact",
+        element:<Contact></Contact>,
       },
  
       {

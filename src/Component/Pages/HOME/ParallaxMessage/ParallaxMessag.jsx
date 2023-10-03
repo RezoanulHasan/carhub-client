@@ -12,7 +12,7 @@ const ParallaxMessage = () => {
 
           <div className="card-actions flex justify-center mt-4">
             <Link to="/cars">
-              <button className="btn bg-blue-400 text-white">Booking Now</button>
+              <button className="btn bg-blue-400 text-white">Rent Now</button>
             </Link>
           </div>
         </div>
