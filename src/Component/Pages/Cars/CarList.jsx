@@ -5,7 +5,9 @@ import { useSearchParams } from 'react-router-dom';
 import { FaSearch ,FaUsers,FaGasPump ,FaTachometerAlt, FaCar} from 'react-icons/fa';
 import useTitle from '../../../Hooks/useTitle';
 import TotalCars from './TotalCars';
-
+import HeartButton from "../Cars/Button/HeartButton";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 
 function CarList() {
@@ -81,7 +83,16 @@ function CarList() {
     src={car?.image} 
     alt={car?.model} 
   />
+  <div className='absolute top-3 right-3'>
+            <HeartButton />
+            <ToastContainer />
+          </div>
+
+
 </figure>
+
+
+
         <div className="card-body">
 
 
