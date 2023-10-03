@@ -1,9 +1,11 @@
-// CarList.jsx
-
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import Container from '../../Shared/Contanier/Container';
 import { useSearchParams } from 'react-router-dom';
+import { FaSearch ,FaUsers,FaGasPump ,FaTachometerAlt, FaCar} from 'react-icons/fa';
+
+
+
 function CarList() {
   const [cars, setCars] = useState([]);
   const [query, setQuery] = useState('');
@@ -40,35 +42,92 @@ function CarList() {
   return (
     <><Container>
     <div className='mt-32'>
-    <input
-  id='model'
-  type='text'
-  placeholder='Search by location'
-  className='p-2 w-auto border border-gray-300 rounded-full'
-  value={model}
-  onChange={(e) => setModel(e.target.value)}
-/>
+    <div className="relative flex justify-center items-center mb-4">
+  <input
+    id='model'
+    type='text'
+    placeholder='Search by                    Car name'
+    className='pl-4 pr-12 py-4  w-96 border border-blue-500 rounded-full text-center mx-auto'
+    value={model}
+    onChange={(e) => setModel(e.target.value)}
+  />
+  <FaSearch className="absolute flex justify-end items-end top-1/2 transform -translate-y-1/2 text-blue-700" />
+</div>
+
 {filteredCars.length > 0 ? (
 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-32 gap-4">
   {filteredCars.map((car) => (
-    <li key={car.id} className="mb-5 rounded">
+    <li key={car.id} className="mb-5  rounded">
   
-      <div className="card w-full  h-full bg-base-100 shadow-xl mt-4">
-        <figure>
-          <img className = "h-56"src={car.image} alt={car.model} /> {/* Assuming there's an imageUrl property in your car object */}
-        </figure>
+      <div className="card w-full  h-full bg-blue-100   hover:bg-black hover:text-white  shadow-xl mt-4">
+      <figure className=" relative overflow-hidden">
+  <img
+    className="w-full h-72 transform transition-transform duration-300 hover:scale-150"
+    src={car.image} 
+    alt={car.model} 
+  />
+</figure>
         <div className="card-body">
-          <h2 className="card-title">
-            {car.model}
-            <div className="badge badge-secondary">NEW</div> {/* You can customize this part */}
-          </h2>
-          <p>{car.description}</p> {/* Assuming there's a description property in your car object */}
-          <div className="card-actions justify-end">
-            <div className="badge badge-outline">{car.category}</div> {/* Assuming there's a category property in your car object */}
-            <div className="badge badge-outline">{car.brand}</div> {/* Assuming there's a brand property in your car object */}
+
+
+
+        <h2 className="card-title flex justify-between items-center">
+  {car.model}
+  <div className="text-sm border-dashed border-2 border-indigo-600 rounded-lg p-2">
+    {car.year}
+  </div>
+</h2>
+
+
+<h2 className="card-title flex justify-around items-center">
+  <div className='-mx-10 card-title text-xl'>
+    <FaUsers className="text-blue-500 ml-1" />
+    <h1>{car.seating_capacity}</h1>
+  </div>
+  <div className="p-2 card-title text-lg ">
+
+  <FaTachometerAlt className="ml-1 text-blue-500  " />
+ 
+  {car.fuel_efficiency_km_per_liter.combined_km_per_liter}
+   
+  </div>
+</h2>
+
+
+<h2 className="card-title flex justify-around items-center">
+  <div className='card-title text-xl'>
+    < FaGasPump className="text-blue-500 ml-1" />
+    <h1>{car.fuel_type}</h1>
+  </div>
+  <div className="p-2 card-title text-lg ">
+
+  <FaCar className="ml-1 text-blue-500  " />
+    {car.transmission}
+
+  </div>
+</h2>
+
+
+<div className="divider h-1 bg-white"></div>
+
+
+
+
+
+          
+<h2 className="card-title flex justify-between items-center">
+$ {car.rent}/month
+  <div className="text-sm  p-2">
+  <button className='btn bg-blue-400 text-white hover:text-black'><Link to={`/car/${car.id}`} className="font-bold">View Deatils</Link></button>
+  </div>
+</h2>
+
+
+
+
+
+       
          
-            <Link to={`/car/${car.id}`} className="font-bold">{car.model}</Link>
-          </div>
         </div>
       </div>
     </li>
