@@ -48,9 +48,9 @@ const Footer = () => {
 
 <footer className="footer px-10 py-4 border-t  text-black  bg-blue-200   ">
   <aside className="items-center grid-flow-col">
-  <div className="avatar bg-black">
+  <div className="avatar ">
   <div className="w-20 mask mask-hexagon">
-    <img src="https://i.ibb.co/72RXy2H/favicon.png" />
+    <img src=" https://i5.walmartimages.com/asr/1a90f7c3-678e-4bc2-bc97-571b34ceae70.67669fc5994ba85fe07dac3d25da7cbe.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF " />
   </div>
 </div>
     <p> CarHub Industries Ltd. <br/>Providing reliable tech since  2023</p>

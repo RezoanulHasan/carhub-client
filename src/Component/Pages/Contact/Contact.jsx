@@ -11,7 +11,7 @@ import ContactForm from "./ContactForm/ContactForm";
 
 const Contact = () => {
   return (
-    <div className="container mx-auto px-3 sm:px-5">
+    <div className="container mx-auto px-3  sm:px-5">
       
       <div className="py-16 sm:py-24">
         <div className="text-left border-l-4 border-[#1d4ed8] pl-3">

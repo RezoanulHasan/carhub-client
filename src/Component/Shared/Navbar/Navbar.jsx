@@ -1,10 +1,17 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import { motion, useScroll} from "framer-motion";
+import "./scroll.css"
 const Navbar = () => {
+
+  const { scrollYProgress } = useScroll();
     return (
         <div>
-            
-            <div className="navbar bg-base-100">
+             <motion.div
+       
+       style={{ scaleX: scrollYProgress }}
+    className=' progress-bar   '/>
+            <div className="navbar  fixed w-full z-10 shadow-sm   ">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -12,35 +19,32 @@ const Navbar = () => {
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
         <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
+       
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <h1 className="normal-case text-2xl font-bold ">Car</h1>
+    <div className="avatar ">
+  <div className="w-20 mask mask-hexagon">
+    <img src="https://i5.walmartimages.com/asr/1a90f7c3-678e-4bc2-bc97-571b34ceae70.67669fc5994ba85fe07dac3d25da7cbe.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" />
+  </div>
+  </div>
+
+
+    <h1 className='text-blue-400 text-2xl font-bold '>Hub</h1>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li tabIndex={0}>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
+    <ul className="menu menu-horizontal px-3">
+      
+    <li className='hover:bg-blue-400 text-2xl  text-blue-400 hover:text-white font-bold  rounded-xl '> <Link to="/">Home </Link>
+    </li>
+    <li className='hover:bg-blue-400 text-2xl  text-blue-400 hover:text-white font-bold  rounded-xl'>  <Link to="/cars">All Cars </Link></li>
+     
       <li><a>Item 3</a></li>
     </ul>
   </div>
   <div className="navbar-end">
-    <button className="btn bg-blue-400 text-white">Button</button>
+    <button className="btn  bg-blue-400  btn-outline text-white">login</button>
   </div>
 </div>
 
