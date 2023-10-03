@@ -4,7 +4,7 @@ function TotalCars() {
   const [totalCars, setTotalCars] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/totalCars')
+    fetch('https://car-dm2lqyusv-rezoanulhasan.vercel.app/totalCars')
       .then(response => response.json())
       .then(data => setTotalCars(data.totalCars));
   }, []);

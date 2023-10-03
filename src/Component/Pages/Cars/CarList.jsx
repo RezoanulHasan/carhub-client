@@ -32,7 +32,7 @@ function CarList() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/cars/${page}`);
+        const response = await fetch(`https://car-dm2lqyusv-rezoanulhasan.vercel.app/cars/${page}`);
         const data = await response.json();
         setCars(data.cars);
       } catch (error) {
