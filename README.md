@@ -1,7 +1,7 @@
 ## Website name : CarHub 🚗
 
 ## website type: Frontend react single page web application
-## live link: https://carhubrezoanul.netlify.app
+## live link: https://carhubrezoanul.netlify.app/
 
 
 ## Features
