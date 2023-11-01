@@ -1,24 +1,26 @@
 ## Website name : CarHub 🚗
 
 ## website type: Frontend react single page web application
-## live link: https://carhubrezoanul.netlify.app/
+## live link: https://rezoanulcarhub.netlify.app/
 
 
 ## Features
 - responsive for all device 
 ## Home
-- Navbar with logo, name, and essential links ( All cars and Contact) .
+- Navbar with logo, name, and essential links ( All cars and Contacts).
 - Image slider with text
+- About Us rection
 - Review rection
 
 ## All cars 
 - Search functionality by car name
+- filtering functionality  price and brand name
 - Show car data with pagination
 - View car details option
 
 
 ## Contact
-  - Poprer information with map
+  - Proper information with a map
   - Direct massege system 
   
 
@@ -44,6 +46,11 @@
  ## website hosting
  - Client-side (netlify)
  - Server side (Vercel)
+
+## For Running  Website
+- just download or clone this repository on your system.
+-  npm install
+-  npm run dev
 
 ## Contact
 For any inquiries or further information, please reach out to:
