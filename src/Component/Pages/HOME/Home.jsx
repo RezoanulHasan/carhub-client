@@ -5,6 +5,9 @@ import Container from '../../Shared/Contanier/Container';
 import useTitle from './../../../Hooks/useTitle';
 import { useEffect } from 'react';
 import Review from './Review/Review';
+import About from './About/About';
+
+
 
 
 
@@ -18,10 +21,11 @@ const Home = () => {
 
     return (
         <div>
-
+\
 <Slider></Slider>
 
 <Container>
+<About></About>
 <ParallaxMessag></ParallaxMessag>
 <Review></Review>
 <Subscribe></Subscribe>

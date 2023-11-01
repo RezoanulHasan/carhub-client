@@ -1,5 +1,5 @@
 import Container from "../../../Shared/Contanier/Container";
-import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
+//import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 
 const Subscribe = () => {
   const handleSubscribe = (e) => {
@@ -37,24 +37,7 @@ const Subscribe = () => {
         
 
         </div>
-        <form onSubmit={handleSubscribe} className="my-12">
-        <SectionTitle
-            heading="Subscribe to our newsletter"
-            subHeading="Get updates for new Hospitality and new Service"
-          />
-          <div className="join w-full justify-center">
-            <input
-              className="input w-full max-w-xs input-bordered join-item"
-              placeholder="Email"
-            />
-            <button
-              type="submit"
-              className="btn join-item my-btn  bg-blue-400  text-white   hover:bg-black rounded-r-full"
-            >
-              Subscribe
-            </button>
-          </div>
-        </form>
+      
       </Container>
     </section>
   );
