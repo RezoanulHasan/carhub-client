@@ -13,11 +13,11 @@ const About = () => {
         <div className="py-5">
             <Helmet>
                 <title>About | Car Hub </title>
-                <meta name="description" content="Corify - Car Dealer Website" />
+                <meta name="description" content="Car Hub - Car rent Website" />
             </Helmet>
             <div className="about-bg py-20">
                 <div className="container mx-auto px-5">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8  mt-40">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8  mt-32">
                     <Fade direction="left" >
                         <div className="p-4">
                             <p className="text-blue-200  text-xl uppercase font-bold">CAR HUB</p>
